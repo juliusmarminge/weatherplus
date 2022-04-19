@@ -10,7 +10,7 @@ export const reportRouter = trpc
         select: {
           id: true,
           description: true,
-          measurement: true,
+          measurement: { select: { type: true, value: true } },
         },
       });
     },
@@ -46,6 +46,6 @@ export const reportRouter = trpc
       const measurements = await prisma.measurement.createMany({
         data: input.measurements.map((m) => ({ ...m, reportId: report.id })),
       });
-      return report;
+      return await prisma.report.findFirst({ where: { id: report.id } });
     },
   });
