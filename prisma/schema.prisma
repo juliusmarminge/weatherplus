@@ -12,8 +12,17 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
+model Sensor {
+  id        Int  @id @default(autoincrement())
+  value     String
+  type      String
+  reports   Report[]
+}
+
 model Report {
-  id          String   @id @default(cuid())
-  createdAt   DateTime @default(now())
-  description String @db.VarChar(1000)
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  description String    @db.VarChar(1000)
+  sensor      Sensor    @relation(fields: [sensorId], references: [id])
+  sensorId    Int
 }
