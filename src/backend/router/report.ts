@@ -1,6 +1,6 @@
 import * as trpc from '@trpc/server';
 import { z } from 'zod';
-import { prisma } from "../../db/client";
+import { prisma } from "~/backend/db/client";
 
 export const reportRouter = trpc
   .router()
