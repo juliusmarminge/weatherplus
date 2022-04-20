@@ -10,6 +10,7 @@ export const reportRouter = trpc
         select: {
           id: true,
           description: true,
+          createdAt: true,
           measurement: { select: { type: true, value: true } },
         },
       });
