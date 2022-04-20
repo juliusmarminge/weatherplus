@@ -1,5 +1,5 @@
 import { trpc } from "~/utils/trpc";
-import { InferQueryOutput } from "./api/trpc/[trpc]";
+import { InferQueryOutput } from "~/utils/trpc";
 import React from "react";
 import { format } from "date-fns";
 import { WEATHER_IMAGES, MEASUREMENT_TYPES_IMAGES } from "~/utils/constants";
