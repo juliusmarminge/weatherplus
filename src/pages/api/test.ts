@@ -8,3 +8,5 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   console.log("query", query);
   res.status(200).json({ method, body, headers, query });
 };
+
+export default handler;
